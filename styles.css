@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.gameboard__container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 1em;
+}
+
+.gameboard-tile {
+    border-radius: 15px;
+    background: rgb(209, 225, 253);
+
+}
