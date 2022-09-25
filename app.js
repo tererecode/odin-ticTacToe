@@ -14,8 +14,8 @@ const player1 = Player('Player 1', 'X');
 const player2 = Player('Player 2', 'O');
 
 const displayController = (() => {
-    const playerTurn = (currentPlayer) => {
-        currentPlayerDisplay.textContent = currentPlayer
+    const playerTurn = (currentPlayer, playerSymbol) => {
+        currentPlayerDisplay.textContent = `${currentPlayer} (${playerSymbol})`
     }
     return { playerTurn }
 })();
@@ -44,7 +44,7 @@ const gameBoard = (() => {
 
         }
         console.log(boardArray);
-        currentPlayerDisplay.textContent = player1.getName()
+        currentPlayerDisplay.textContent = `${player1.getName()} (${player1.getSymbol()})`
     }
     return { boardArray, resetBoard }
 
@@ -105,7 +105,7 @@ const gameFlow = (() => {
                 currentPlayer = player1;
                 console.log(`Now its ${currentPlayer.getName()}s turn`);
             }
-            displayController.playerTurn(currentPlayer.getName())
+            displayController.playerTurn(currentPlayer.getName(), currentPlayer.getSymbol())
         } else {
             winnerDisplay.textContent = "It's a Draw, please start a new game!"
         }
