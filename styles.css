@@ -12,8 +12,20 @@
 }
 
 .gameboard-tile {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 72px;
     border-radius: 15px;
     background: rgb(209, 225, 253);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
+
+/* trying to use a svg #failing */
+/* .test {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    background-image: url(./images/cross.svg);
+} */
