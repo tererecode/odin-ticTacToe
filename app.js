@@ -55,7 +55,6 @@ const gameBoard = (() => {
 // Game flow modules handle click events on the dom tiles check for winner
 const gameFlow = (() => {
     let currentPlayer = player1;
-
     const handlePlay = (tileClickIndex) => {
         if (gameBoard.boardArray[tileClickIndex] == '') {
             gameBoard.boardArray.splice(tileClickIndex, 1, currentPlayer.getSymbol())
@@ -69,6 +68,7 @@ const gameFlow = (() => {
             }
         } else {
             console.log('Whoops that place is taken!');
+            alert('Whoops! that place is already taken, please try again')
         }
     }
     const checkWinner = () => {
@@ -96,16 +96,19 @@ const gameFlow = (() => {
         }
     }
     const endTurn = () => {
-        console.log(`Current player is ${currentPlayer.getName()}`);
-        if (currentPlayer == player1) {
-            currentPlayer = player2
-            console.log(`Now its ${currentPlayer.getName()}s turn`);
-
+        if (gameBoard.boardArray.filter(play => play == '').length != 0) {
+            console.log(`Current player is ${currentPlayer.getName()}`);
+            if (currentPlayer == player1) {
+                currentPlayer = player2
+                console.log(`Now its ${currentPlayer.getName()}s turn`);
+            } else {
+                currentPlayer = player1;
+                console.log(`Now its ${currentPlayer.getName()}s turn`);
+            }
+            displayController.playerTurn(currentPlayer.getName())
         } else {
-            currentPlayer = player1;
-            console.log(`Now its ${currentPlayer.getName()}s turn`);
+            winnerDisplay.textContent = "It's a Draw, please start a new game!"
         }
-        displayController.playerTurn(currentPlayer.getName())
     }
     return { handlePlay }
 })()
