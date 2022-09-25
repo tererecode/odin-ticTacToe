@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=PT+Sans:wght@400;700&family=Roboto:wght@300;400&family=Varela+Round&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script src="./app.js" defer></script>
 </head>
@@ -16,10 +21,17 @@
     </header>
     <div class="sidebar">
         <div class="sidebar__controls">
-            <!-- put some buttons here -->
+            <button class="reset__btn btn">New Game</button>
         </div>
         <div class="sidebar__info">
             <!-- display some info here -->
+            <div class="currentplayer">
+                <h3 class="currentplayer-title">Player turn: </h3>
+                <p class="currentplayer-value"></p>
+            </div>
+            <div class="winner">
+                <h2 class="winnerplayer"></h2>
+            </div>
         </div>
     </div>
     <main class="gameboard main">
@@ -27,6 +39,8 @@
             <!-- diplay the game grid -->
         </div>
     </main>
+    <!-- Trying to draw a symbol with an svg  -->
+    <!-- <div class="test"></div> -->
 </body>
 
 </html>
