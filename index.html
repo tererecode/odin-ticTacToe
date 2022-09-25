@@ -16,29 +16,31 @@
 </head>
 
 <body>
-    <header class="hero">
-        <h1 class="hero title">Tic Tac Toe Game</h1>
-    </header>
-    <div class="sidebar">
-        <div class="sidebar__controls">
-            <button class="reset__btn btn">New Game</button>
-        </div>
-        <div class="sidebar__info">
-            <!-- display some info here -->
-            <div class="currentplayer">
-                <h3 class="currentplayer-title">Player turn: </h3>
-                <p class="currentplayer-value"></p>
+    <div class="container">
+        <header class="hero">
+            <h1 class="hero-title">Tic Tac Toe Game</h1>
+        </header>
+        <div class="sidebar">
+            <div class="sidebar__controls">
+                <button class="reset__btn btn">New Game</button>
             </div>
-            <div class="winner">
-                <h2 class="winnerplayer"></h2>
+            <div class="sidebar__info">
+                <!-- display some info here -->
+                <div class="currentplayer">
+                    <h3 class="currentplayer-title">Player turn: </h3>
+                    <p class="currentplayer-value"></p>
+                </div>
+                <div class="winner">
+                    <h2 class="winnerplayer"></h2>
+                </div>
             </div>
         </div>
+        <main class="gameboard main">
+            <div class="gameboard__container">
+                <!-- diplay the game grid -->
+            </div>
+        </main>
     </div>
-    <main class="gameboard main">
-        <div class="gameboard__container">
-            <!-- diplay the game grid -->
-        </div>
-    </main>
     <!-- Trying to draw a symbol with an svg  -->
     <!-- <div class="test"></div> -->
 </body>
